@@ -1,5 +1,4 @@
 from geopy.distance import geodesic
-
 class DistanceTracker:
     def __init__(self):
         self.last_position = None  
@@ -35,7 +34,7 @@ class persona():
     def getApellido(self):
         return (self.__apellido)
     def setApellido(self,apellido):
-        self.__apellido=apellido
+        self.__apelldio=apellido
     
     def getCorreo(self):
         return (self.__correo)
@@ -64,21 +63,21 @@ class comprador(persona):
         super().__init__(dni,nombre,apellido,correo,cel,id_persona)
             
             
-class vehiculo:
-    def __init__(self,id_vehiculo,patente,marca,modelo,anio,color,tipo,kilometro) -> None:
-        self.__id_vehiculo=id_vehiculo
+class veiculo:
+    def __init__(self,id_veiculo,patente,marca,modelo,anno,color,tipo,kilometro) -> None:
+        self.__id_veiculo=id_veiculo
         self.__patente=patente
         self.__marca=marca
         self.__kilometro=kilometro
         self.__modelo=modelo
-        self.__anio=anio
+        self.__anno=anno
         self.__color=color
         self.__tipo=tipo
         
-    def getIdvehiculo(self):
-        return (self.__id_vehiculo)
-    def setIdvehiculo(self,id_vehiculo):
-        self.__id_vehiculo=id_vehiculo
+    def getIdveiculo(self):
+        return (self.__id_veiculo)
+    def setIdveiculo(self,id_veiculo):
+        self.__id_veiculo=id_veiculo
     
     def getPatente(self):
         return (self.__patente)
@@ -95,10 +94,10 @@ class vehiculo:
     def setModelo(self,modelo):
         self.__modelo=modelo
     
-    def getanio(self):
-        return (self.__anio)
-    def setanio(self,anio):
-        self.__anio=anio
+    def getAnno(self):
+        return (self.__anno)
+    def setAnno(self,anno):
+        self.__anno=anno
     
     def getColor(self):
         return (self.__color)
