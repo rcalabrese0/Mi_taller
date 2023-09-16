@@ -1,5 +1,10 @@
+
+
+
 import datetime
 from datetime import datetime
+
+
 
 bateria=0
 kilometros=0
