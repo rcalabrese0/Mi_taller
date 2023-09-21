@@ -44,4 +44,12 @@ class persona():
     def __str__(self):
         return f"DNI: {self.__dni},NOMBRE: {self.__nombre},APELLIDO: {self.__apellido},CORREO: {self.__correo},CELUALAR: {self.__cel},NUMERO ID: {self.__id_persona}"             
        
- 
+    def alta_usuario():
+                
+        setDni=input("Ingrese dni:  ")
+        setApellido=input("Ingrese apellido: ")
+        setNombre=input("Ingrese nombre: ")
+        setCel=input("Ingrese celular: ")
+        setCorreo=input("Ingrese correo: ")
+        setIdpersona=input("Id persona_: ")
+        

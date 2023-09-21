@@ -1,37 +1,60 @@
-from model.instancia_cero import instancia_auto
-from model.usuario import persona
-from model.vehiculo import vehiculo
- 
-
-auto=vehiculo()
-usuario=persona()
-intancia_cero=instancia_auto()
-
-def alta_auto():
-    auto.setIdvehiculo=input("ingrese id vehiculo viene de labase datos")
-    auto.setAnno=input("ingrese año: " )
-    auto.setColor=input("color: ")
-    auto.setMarca=input("marca: ")
-    auto.setModelo=input("modelo: ")
-    auto.setTipo=input("tipo: ")
-    auto.setPatente=input("patente: ")
-    auto.setKilometro=int(input("kilometros"))
-    return auto
-
-def alta_usuario():
-                
-    usuario.setDni=input("Ingrese dni:  ")
-    usuario.setApellido=input("Ingrese apellido: ")
-    usuario.setNombre=input("Ingrese nombre: ")
-    usuario.setCel=input("Ingrese celular: ")
-    usuario.setCorreo=input("Ingrese correo: ")
-    usuario.setIdpersona=input("Id persona_: ")
-    return usuario
-
-def alta_mantenimineto():
-    intancia_cero.setAceite=int(input("ingrese los km del aceite: "))
-    intancia_cero.setCorrea=int(input("los km de la correa: "))
-    intancia_cero.setCubiertas=int(input("km de las cubiertas: "))
-    intancia_cero.setFreno=int(input("km de los frenos: "))
-    intancia_cero.setKilometros=int(input("km del vehiculo: "))
-    return intancia_cero
+class instancia_auto:
+    
+    def __init__(self,kilometros=0,cubiertas=0,aceite=0,freno=0,correa=0) -> None:
+        self.__kilometros=kilometros
+        self.__cubiertas=cubiertas
+        self.__aceite=aceite
+        self.__freno=freno
+        self.__correa=correa
+        
+    
+    def getKilometros(self):
+        return (self.__kilometros)
+    def setKilometros(self,kilometros):
+        self.__kilometros=kilometros
+    
+    def getCubiertas(self):
+        return (self.__cubiertas)
+    def setCubiertas(self,cubiertas):
+        self.__cubiertas=cubiertas
+    
+    def getAceite(self):
+        return (self.__aceite)
+    def setAceite(self,aceite):
+        self.__aceite=aceite
+        
+    def getFreno(self):
+        return (self.__freno)
+    def setFreno(self,freno):
+        self.__freno=freno
+        
+    def getCorrea(self):
+        return (self.__correa)
+    def setCorrea(self,correa):
+        self.__correa=correa
+    
+    
+    def __str__(self):
+        return f"kilometros: {self.__kilometros},cubiertas: {self.__cubiertas},freno: {self.__freno},correa: {self.__correa},aceite: {self.__aceite}"             
+    
+    
+    def alta_mantenimineto(self):
+        
+        self.setAceite(int(input("ingrese los km del aceite: ")))
+        self.setCorrea(int(input("los km de la correa: ")))
+        self.setCubiertas(int(input("km de las cubiertas: ")))
+        self.setFreno(int(input("km de los frenos: ")))
+        self.setKilometros(int(input("km del vehiculo: ")))
+            
+    
+    def suma_km(self,km):
+        self.setKilometros(self.getKilometros() + km)
+        self.setCubiertas(self.getCubiertas() + km)
+        self.setAceite(self.getAceite() + km)
+        self.setFreno(self.getFreno() + km)
+        self.setCorrea(self.getCorrea() + km)
+        
+mante1=instancia_auto()
+mante1.alta_mantenimineto()
+mante1.suma_km(5)
+print(mante1)

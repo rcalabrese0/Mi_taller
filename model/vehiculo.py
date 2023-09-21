@@ -52,3 +52,14 @@ class vehiculo:
         
     def __str__(self):
         return f"ID VEHICULO: {self.__id_vehiculo},PATENTE: {self.__patente},MARCA: {self.__marca},KILOMETRO: {self.__kilometro},MODELO: {self.__modelo},AÑO: {self.__anno}, COLOR: {self.__color}, TIPO: {self.__tipo}"             
+
+    def alta_auto():
+        setIdvehiculo=input("ingrese id vehiculo viene de labase datos")
+        setAnno=input("ingrese año: " )
+        setColor=input("color: ")
+        setMarca=input("marca: ")
+        setModelo=input("modelo: ")
+        setTipo=input("tipo: ")
+        setPatente=input("patente: ")
+        setKilometro=int(input("kilometros"))
+    

@@ -1,13 +1,13 @@
 class instancia_auto:
     
-    def __init__(self,kilometros="000000",cubiertas="00000",aceite="000",freno="000",correa="0000") -> None:
+    def __init__(self,kilometros=0,cubiertas=0,aceite=0,freno=0,correa=0) -> None:
         self.__kilometros=kilometros
         self.__cubiertas=cubiertas
         self.__aceite=aceite
         self.__freno=freno
         self.__correa=correa
         
-        
+    
     def getKilometros(self):
         return (self.__kilometros)
     def setKilometros(self,kilometros):
@@ -33,9 +33,26 @@ class instancia_auto:
     def setCorrea(self,correa):
         self.__correa=correa
     
+    
     def __str__(self):
         return f"kilometros: {self.__kilometros},cubiertas: {self.__cubiertas},freno: {self.__freno},correa: {self.__correa},aceite: {self.__aceite}"             
     
+    
+    def alta_mantenimineto(self):
+        
+        self.setAceite(int(input("ingrese los km del aceite: ")))
+        self.setCorrea(int(input("los km de la correa: ")))
+        self.setCubiertas(int(input("km de las cubiertas: ")))
+        self.setFreno(int(input("km de los frenos: ")))
+        self.setKilometros(int(input("km del vehiculo: ")))
+            
+    
+    def suma_km(self,km):
+        self.setKilometros(self.getKilometros() + km)
+        self.setCubiertas(self.getCubiertas() + km)
+        self.setAceite(self.getAceite() + km)
+        self.setFreno(self.getFreno() + km)
+        self.setCorrea(self.getCorrea() + km)
         
 
 
