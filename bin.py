@@ -1,3 +1,5 @@
+import pickle
+
 datos= {
     "c_kilometros":0,  
     "c_aceite":11000,
@@ -6,11 +8,6 @@ datos= {
     "c_cubiertas":50000,
     "c_correa":60000
     }
-
-
-import pickle
-
-
 
 def imprime_datos_bin():
     # Abre el archivo en modo de lectura binaria ('rb')
