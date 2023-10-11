@@ -1,3 +1,4 @@
+import pickle
 from model.vehiculo import vehiculo
 from model.usuario import persona
 from model.instancia_cero import instancia_auto
@@ -5,18 +6,23 @@ from model.instancia_cero import instancia_auto
 #usuario1=persona.alta_usuario()
 #auto1=vehiculo.alta_auto()
 mante1=instancia_auto()
-mante1.alta_mantenimineto()
+auto.alta_mantenimineto(1,2,3,4,5)
+auto.suma_km(9)
 
 
+with open('datos.bin', 'rb') as archivo_bin:
+        # Carga el diccionario desde el archivo binario
+        diccio_intancia_0 = pickle.load(archivo_bin)
 
+""" 
 diccio_intancia_0= {
     "c_kilometros":0,  
     "c_aceite":11000,
-    "c_freno":30000,
+    "c_freno":30000,           #SE RECUPERA DEL ARCHIVO BINARIO
     "c_bateria":0,
     "c_cubiertas":50000,
     "c_correa":60000
-    }
+    } """
 
 while True:
     kilometros_contador=(input("ingrese los kilometros a recorrer: "))

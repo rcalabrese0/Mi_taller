@@ -45,32 +45,24 @@ class instancia_auto:
         self.setCubiertas(cubiertas)
         self.setFreno(freno)
         self.setKilometros(kilometros)
-        
+            
     
-    def suma_km(self,km):
-        self.setKilometros(self.getKilometros() + km)
-        self.setCubiertas(self.getCubiertas() + km)
-        self.setAceite(self.getAceite() + km)
-        self.setFreno(self.getFreno() + km)
-        self.setCorrea(self.getCorrea() + km)
+    def suma_km(self,sum_km):
+        self.setKilometros(self.getKilometros() + sum_km)
+        self.setCubiertas(self.getCubiertas() + sum_km)
+        self.setAceite(self.getAceite() + sum_km)
+        self.setFreno(self.getFreno() + sum_km)
+        self.setCorrea(self.getCorrea() + sum_km)
         
 
+ 
+auto=instancia_auto()
+#auto.setAceite(1)
+#auto.setCorrea(1)
 
 
-""" from geopy.distance import geodesic
+auto.alta_mantenimineto(1,2,3,4,5)
+auto.suma_km(9)
+print(auto)
 
-class DistanceTracker:
-    def __init__(self):
-        self.last_position = None  
-        self.total_distance = 0.0
-        
-    def update_distance(self, new_position):
-        if self.last_position is not None:
-            distance = geodesic(self.last_position, new_position).kilometers
-            self.total_distance += distance
-            print(f"Distancia Recorida: {distance:.2f} km")
-            print(f"Total Recorrido: {self.total_distance:.2f} km")
-        self.last_position = new_position
- """   
-        
-
+ 
