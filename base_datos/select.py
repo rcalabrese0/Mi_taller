@@ -1,32 +1,24 @@
-import mysql.connector
+from insert import obtener_conexion
 
-# Establecer la conexión a la base de datos
-conexion = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="1234567",
-    database="mytaller_db"
-        )
+def hola():
+    return 'Hola'
 
+def get_a():
+    conexion = obtener_conexion()
+    try:
+        cursor = conexion.cursor()
+        # Ejecutar una consulta SELECT
+        consulta = "SELECT * FROM Vehiculo"
+        cursor.execute(consulta)
 
+        #   Obtener los resultados
+        resultados = cursor.fetchall()
 
- 
-# Crear un cursor para interactuar con la base de datos
-cursor = conexion.cursor()
-
-# Sentencia SQL para la consulta
-consulta_query = "SELECT * FROM mantenimiento_vehiculo"
-
-# Ejecutar la consulta
-cursor.execute(consulta_query)
-
-# Obtener todos los resultados de la consulta
-resultados = cursor.fetchall()
-
-# Imprimir los resultados
-for fila in resultados:
-    print(fila)
-
-# Cerrar el cursor y la conexión
-cursor.close()
-conexion.close()
+        # Cerrar el cursor
+        cursor.close()
+    
+        return resultados
+    except:
+        print("Error")
+    finally:
+        conexion.close()
