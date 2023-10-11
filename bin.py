@@ -6,6 +6,7 @@ datos= {
     "c_cubiertas":50000,
     "c_correa":60000
     }
+
 import pickle
 
 
@@ -35,4 +36,4 @@ with open('datos.bin', 'rb') as archivo_bin:
 
     # Ahora puedes trabajar con el diccionario recuperado
         print(datos_recuperados)
- 
+

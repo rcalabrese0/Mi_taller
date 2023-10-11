@@ -16,5 +16,3 @@ def obtener_conexion():
 #INSERT INTO vehiculo () VALUES (9, "jjj333","rr","mm","1234","rojo","sedan",1234)
 # Datos que deseas insertar
 
-
-
