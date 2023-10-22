@@ -1,12 +1,12 @@
 
 class persona():
-    def __init__(self,dni="dni_persona",nombre="nombre",apellido="apellido",correo="corro@corre.com",cel="1223444",id_perosna="1") -> None:
+    def __init__(self,dni="dni_persona",nombre="nombre",apellido="apellido",correo="corro@corre.com",cel="1223444",id_persona="1") -> None:
         self.__dni=dni
         self.__nombre=nombre
         self.__apellido=apellido
         self.__correo=correo
         self.__cel=cel
-        self.__id_persona=id_perosna
+        self.__id_persona=id_persona
     
     
     
@@ -23,7 +23,7 @@ class persona():
     def getApellido(self):
         return (self.__apellido)
     def setApellido(self,apellido):
-        self.__apelldio=apellido
+        self.__apellido=apellido
     
     def getCorreo(self):
         return (self.__correo)

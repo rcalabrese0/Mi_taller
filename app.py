@@ -3,19 +3,19 @@ import pymysql
 
 app = Flask(__name__)
 
-# Configura la conexión a la base de datos MySQL
+""" # Configura la conexión a la base de datos MySQL
 db = pymysql.connect(
     host="localhost",
     user="root",
     password="1234567",
     database="mytaller_db",
     cursorclass=pymysql.cursors.DictCursor
-)
+) """
 
 
 @app.route('/')
 def formulario():
-    return render_template('addauto.html')
+    return render_template('index.html')
 
 def insertar_auto(patente, marca, modelo, color):
     try:

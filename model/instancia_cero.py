@@ -6,8 +6,7 @@ class instancia_auto:
         self.__aceite=aceite
         self.__freno=freno
         self.__correa=correa
-        
-    
+            
     def getKilometros(self):
         return (self.__kilometros)
     def setKilometros(self,kilometros):
@@ -37,8 +36,6 @@ class instancia_auto:
     def __str__(self):
         return f"kilometros: {self.__kilometros},cubiertas: {self.__cubiertas},freno: {self.__freno},correa: {self.__correa},aceite: {self.__aceite}"             
     
-    
-
     def alta_mantenimineto(self,aceite,correa,cubiertas,freno,kilometros):
         
         self.setAceite(aceite)
