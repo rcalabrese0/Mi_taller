@@ -47,11 +47,11 @@ while True:   #WHILE DE LA VALIDACION  DE LA FECHA BATERIA
 
 
 
-kilometros=int(input("ingrese los km acutles?"))
-cubiertas=int(input("hace cuantos km cambio las cubiertas?"))
-aceite=int(input("hace cuantos km cambio las aceite?"))
-freno=int(input("hace cuantos km cambio los fenos?"))
-correa=int(input("hace cuantos km cambio la correa distribucion?"))
+kilometros=int(input("Ingrese los kilometros actuales?"))
+cubiertas=int(input("Hace cuantos kilometros cambio las cubiertas?"))
+aceite=int(input("Hace cuantos kilometros cambio las aceite?"))
+freno=int(input("Hace cuantos kilometros cambio los frenos?"))
+correa=int(input("Hace cuantos kilometros cambio la correa distribucion?"))
 
 diccio_estado_actual={
     "kilometros":kilometros,
@@ -64,11 +64,11 @@ diccio_estado_actual={
 
  
 while True:
-    kilometros_contador=(input("ingrese los kilometros a recorrer: "))
+    kilometros_contador=(input("Ingrese los kilometros a recorrer: "))
     if kilometros_contador.isdigit():
         kilometros_contador=int(kilometros_contador)
     else: 
-            print("ingrese solo numeros enteros")
+            print("Ingrese solo numeros enteros")
             continue
     diccio_estado_actual["kilometros"]+=kilometros_contador
     diccio_estado_actual["aceite"]+=kilometros_contador
@@ -94,32 +94,32 @@ while True:
     """)
     
     if (diccio_estado_actual["aceite"])>=(diccio_intancia_0["c_aceite"]):
-        print(f"realice cambio de servicio correspondiete a : ACEITE")
-        reset_aceite=input(print("A REALIZADO CAMBIO ACEITE ?(s/n)"))
+        print(f"Realice cambio de servicio correspondiete a : ACEITE")
+        reset_aceite=input(print("A REALIZADO CAMBIO ACEITE ?(s/n): "))
         if reset_aceite=="s" or reset_aceite=="S":
             diccio_estado_actual["aceite"]=0
     
     if diccio_estado_actual["freno"]>=diccio_intancia_0["c_freno"]:
-        print(f"realice cambio de servicio correspondiete a : FRENO")
-        reset_freno=input(print("A RENOBADO LOS FRENOS ?(s/n)"))
+        print(f"Realice cambio de servicio correspondiete a : FRENO")
+        reset_freno=input(print("A RENOBADO LOS FRENOS ?(s/n): "))
         if reset_freno=="s" or reset_freno=="S":
             diccio_estado_actual["freno"]=0
     
     if diccio_estado_actual["correa"]>=diccio_intancia_0["c_correa"]:
-        print(f"realice cambio de servicio correspondiete a : CORREA")
-        reset_corre=input(print("A REALIZADO CAMBIO CORREA ?(s/n)"))
+        print(f"Realice cambio de servicio correspondiete a : CORREA")
+        reset_corre=input(print("A REALIZADO CAMBIO CORREA ?(s/n): "))
         if reset_aceite=="s" or reset_aceite=="S":
             diccio_estado_actual["correa"]=0
     
     if diccio_estado_actual["cubiertas"]>=diccio_intancia_0["c_cubiertas"]:
-        print(f"realice cambio de servicio correspondiete a : CUBIERTAS")
-        reset_cubiertas=input(print("A REALIZADO CAMBIO CUBIERTAS ?(S/N)"))
+        print(f"Realice cambio de servicio correspondiete a : CUBIERTAS")
+        reset_cubiertas=input(print("A REALIZADO CAMBIO CUBIERTAS ?(s/n): "))
         if reset_cubiertas=="s" or reset_cubiertas=="S":
             diccio_estado_actual["cubiertas"]=0
     
     if ((diccio_estado_actual["bateria"])-(diccio_intancia_0["bateria"]))>730:
-        print(f"debe cambiar la bateria tiene 2 años")
-        reset_cubiertas=input(print("A REALIZADO CAMBIO BATERIA ?(S/N)"))
+        print(f"Debe cambiar la bateria tiene 2 años")
+        reset_cubiertas=input(print("A REALIZADO CAMBIO BATERIA ?(s/n)"))
         
         if reset_cubiertas=="s" or reset_cubiertas=="S":
              
@@ -137,10 +137,10 @@ while True:
     
 
 print (f"""
-       los kilometros recorridos son: {diccio_estado_actual["kilometros"]} km
+       los kilometros recorridos son: {diccio_estado_actual["kilometros"]} kilometros
        la bateria tiene {diccio_estado_actual["bateria"]- diccio_intancia_0['bateria']} meses de antiguedad
-       las cubiertas tienen: {diccio_estado_actual["cubiertas"]} km
-       los frenos se repararon hace {diccio_estado_actual["freno"]} km
-       el aceite se cabio {diccio_estado_actual["aceite"]} km atras
-       la correa tiene {diccio_estado_actual["correa"]} km
+       las cubiertas tienen: {diccio_estado_actual["cubiertas"]} kilometros
+       los frenos se repararon hace {diccio_estado_actual["freno"]} kilometros
+       el aceite se cambio {diccio_estado_actual["aceite"]} kilometros atras
+       la correa tiene {diccio_estado_actual["correa"]} kilometros
        """)
