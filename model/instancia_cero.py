@@ -44,4 +44,9 @@ class Instancia_auto:
         self.setCorrea    (self.getCorrea()+km)
         self.setCubiertas (self.getCubiertas()+km)
         self.setFreno     (self.getFreno()+km)
-        self.setKilometros(self.getKilometros()+km)            
+        self.setKilometros(self.getKilometros()+km)   
+        
+        
+        
+    def consultar():
+        pass         
