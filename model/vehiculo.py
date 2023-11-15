@@ -1,6 +1,6 @@
             
-class vehiculo:
-    def __init__(self,id_vehiculo="id_vehiculo",patente="123kkk",marca="uno",modelo="dos",anno="1234",color="nn",tipo="nn",kilometro="1234") -> None:
+class Vehiculo:
+    def __init__(self,id_vehiculo,patente,marca,modelo,anno,color,tipo,kilometro,usuario) -> None:
         self.__id_vehiculo=id_vehiculo
         self.__patente=patente
         self.__marca=marca
@@ -9,7 +9,7 @@ class vehiculo:
         self.__anno=anno
         self.__color=color
         self.__tipo=tipo
-        
+        usuario=usuario
     def getIdvehiculo(self):
         return (self.__id_vehiculo)
     def setIdvehiculo(self,id_vehiculo):
@@ -53,13 +53,4 @@ class vehiculo:
     def __str__(self):
         return f"ID VEHICULO: {self.__id_vehiculo},PATENTE: {self.__patente},MARCA: {self.__marca},KILOMETRO: {self.__kilometro},MODELO: {self.__modelo},AÑO: {self.__anno}, COLOR: {self.__color}, TIPO: {self.__tipo}"             
 
-    def alta_auto():
-        setIdvehiculo=input("ingrese id vehiculo viene de labase datos")
-        setAnno=input("ingrese año: " )
-        setColor=input("color: ")
-        setMarca=input("marca: ")
-        setModelo=input("modelo: ")
-        setTipo=input("tipo: ")
-        setPatente=input("patente: ")
-        setKilometro=int(input("kilometros"))
     

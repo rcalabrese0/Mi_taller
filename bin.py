@@ -3,7 +3,7 @@ datos= {
     "c_aceite":11000,
     "c_freno":30000,
     "c_bateria":0,
-    "c_cubiertas":50000,
+    "c_cubiertas":75000,
     "c_correa":60000
     }
 

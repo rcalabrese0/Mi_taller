@@ -12,14 +12,15 @@ db = pymysql.connect(
     cursorclass=pymysql.cursors.DictCursor # Esto convierte los resultados en diccionarios
 )
 
-@app.route('/')
+@app.route('/') #RUTA A LA AGINA PRINCIPAL 
 def consulta_select():
     try:
         # Crear un cursor para interactuar con la base de datos
         cursor = db.cursor()
 
-        # Ejecutar una consulta SELECT
-        consulta = "SELECT * FROM persona"
+        # Ejecutar una consulta SELECT EN LA TABLA REQUERIDA
+        #consulta = "SELECT * FROM persona"
+        consulta = "SELECT * FROM vehiculo"
         cursor.execute(consulta)
 
         # Obtener los resultados
@@ -31,8 +32,8 @@ def consulta_select():
         # Procesar los resultados
         # Por ejemplo, convertirlos en una cadena para mostrar en la respuesta HTTP
         #print(resultados) muestra por consola
-        resultado_str ="\n".join([f"ID: {row['dni']}, Nombre: {row['nombre']}" for row in resultados])
-
+        #resultado_str ="\n".join([f"ID: {row['dni']}, Nombre: {row['nombre']}" for row in resultados])
+        resultado_str ="\n".join([f"ID: {row['idvehiculo']}, año: {row['anno']}, patente: {row['patente']}, marca: {row['marca']}, modelo: {row['modelo']}" for row in resultados])
         return resultados
     except Exception as e:
         return f"Error en la consulta: {str(e)}"

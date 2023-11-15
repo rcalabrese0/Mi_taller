@@ -1,61 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Listado de Vehículos</title>
-    <link rel="stylesheet" href="styles.css">
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
 </head>
+
+
+
 <body>
-    <h1>Listado de Vehículos <i class="fas fa-car"></i></h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Patente</th>
-                <th>Marca</th>
-                <th>Kilómetros</th>
-                <th>Modelo</th>
-                <th>Año</th>
-                <th>Color</th>
-                <th>Tipo</th>
-            </tr>
-        </thead>
-        <tbody id="vehiculos">
-        </tbody>
-    </table>
-
-    <button id="mostrarPopup"><i class="fas fa-plus"></i> Agregar Vehículo</button>
-
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="formulario">
-                <h2>Agregar Vehículo</h2>
-                <label for="patente">Patente:</label>
-                <input type="text" id="patente" required>
-                <label for="marca">Marca:</label>
-                <select id="marca" required>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Ford">Ford</option>
-                    <option value="Chevrolet">Chevrolet</option>
-                </select>
-                <label for="kilometros">Kilómetros:</label>
-                <input type="number" id="kilometros" required>
-                <label for="modelo">Modelo:</label>
-                <input type="text" id="modelo" required>
-                <label for="ano">Año:</label>
-                <input type="number" id="ano" required>
-                <label for="color">Color:</label>
-                <input type="text" id="color" required>
-                <label for="tipo">Tipo:</label>
-                <input type="text" id="tipo" required>
-                <button type="button" onclick="agregarVehiculo()">Agregar</button>
-            </form>
+  <header>
+    <!-- place navbar here -->
+  <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #0f0f0f;">
+      <a class="navbar-brand" href="#">Mi Taller</a>
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation"></button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Contactanos</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Acciones</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownId">
+                      <a class="dropdown-item" href="#">alta usuario</a>
+                      <a class="dropdown-item" href="#">alta vehiculo</a>
+                      <a class="dropdown-item" href="#">suma kilometros</a>
+                  </div>
+              </li>
+          </ul>
+          <form class="d-flex my-2 my-lg-0">
+              <input class="form-control me-sm-2" type="text" placeholder="Entradas antiguas">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          </form>
+      </div>
+  </nav>
+</header>
+  <main>
+       
+    <div class="container">
+      <form>
+        <div class="mb-3 row">
+          <label for="inputName" class="col-4 col-form-label">Name</label>
+          <div class="col-8">
+            <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Name">
+          </div>
         </div>
-    </div>
+        <div class="mb-3 row">
+          <label for="inputName" class="col-4 col-form-label">Apellido</label>
+          <div class="col-8">
+            <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Apellido">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputName" class="col-4 col-form-label">Dni</label>
+          <div class="col-8">
+            <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Dni">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputName" class="col-4 col-form-label">Celular</label>
+          <div class="col-8">
+            <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Numero de telefono">
+          </div>
+        </div>
+        
+        
+        
+        <fieldset class="mb-3 row">
+          <legend class="col-form-legend col-4">Datos Personales</legend>
+          <div class="col-8">
+            Registrece
+          </div>
+        </fieldset>
+        <div class="mb-3 row">
+          <div class="offset-sm-4 col-sm-8">
+            <button type="submit" class="btn btn-primary">Action</button>
+          </div>
+        </div>
+      </form>
+    </div>   
+    
 
-    <script src="script.js"></script>
+    
+    
+
+
+
+
+  </main>
+  <footer>
+    <!-- place footer here -->
+  <footer class="text-center text-white" style="background-color: #45637d;">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Iframe -->
+    <section class="">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6">
+          <div class="ratio ratio-16x9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9RceFoZyc74?si=XfotB6vyItmwogX9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Iframe -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+
+
+
+</footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
 </body>
+
 </html>

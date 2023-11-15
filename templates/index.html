@@ -3,66 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace a Font Awesome para los íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Listado de Vehículos</title>
-    <link rel="stylesheet" href="static\styles.css">
+    <!-- Enlace a tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Login</title>
 </head>
 <body>
-    <h1>Listado de Vehículos <i class="fas fa-car"></i></h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Patente</th>
-                <th>Marca</th>
-                <th>Kilómetros</th>
-                <th>Modelo</th>
-                <th>Año</th>
-                <th>Color</th>
-                <th>Tipo</th>
-                <th>Acciones</th> <!-- columna de acciones -->
-            </tr>
-        </thead>
-        <tbody id="vehiculos">
-        </tbody>
-    </table>
-
-    <button id="mostrarPopup"><i class="fas fa-plus"></i> Agregar Vehículo</button>
-
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="formulario">
-                <h2>Agregar Vehículo</h2>
-                <label for="patente">Patente:</label>
-                <input type="text" id="patente" required>
-                <label for="marca">Marca:</label>
-                <select id="marca" required>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Ford">Ford</option>
-                    <option value="Chevrolet">Chevrolet</option>
-                </select>
-                <label for="kilometros">Kilómetros:</label>
-                <input type="number" id="kilometros" required>
-                <label for="modelo">Modelo:</label>
-                <input type="text" id="modelo" required>
-                <label for="ano">Año:</label>
-                <input type="number" id="ano" required>
-                <label for="color">Color:</label>
-                <input type="text" id="color" required>
-                <label for="tipo">Tipo:</label>
-                <select id="tipo" required>
-                    <option value="Auto">Auto</option>
-                    <option value="Moto">Moto</option>
-                    <option value="Camioneta">Camioneta</option>
-                    <option value="Micro">Micro</option>
-                </select>
-                <button type="button" onclick="agregarVehiculo()">Agregar</button>
-            </form>
-        </div>
+    <!-- Encabezado de la página -->
+    <div class="header">
+        <h1>
+            <span class="user-section"><i class="fas fa-user"></i> Login</span>
+        </h1>
     </div>
 
+    <!-- Formulario de inicio de sesión -->
+    <form class="login-form" action="index2.html" method="post"> <!-- Aca en "action" se puede linkear el archivo para procesar el loguin, ej: procesar_login.php -->
+        <div class="input-container">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required>
+        </div>
+        <div class="input-container">
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+        </div>
+        <div class="button-container">
+            <button type="submit" class="btn-login">Ingresar</button>
+            <button type="button" class="btn-register">Registrar</button>
+        </div>
+    </form>
+
+    <!-- Incluye el script de Font Awesome para usar los íconos -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script src="\static\js\script.js"></script>
 </body>
 </html>
