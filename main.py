@@ -1,3 +1,4 @@
+
 from model.instancia_cero import Instancia_auto
 from model.usuario import Persona
 from model.vehiculo import Vehiculo
@@ -47,52 +48,101 @@ diccio_intancia_0= {
 
 
 while True:
-    kilometros_contador=(input("ingrese los kilometros a recorrer: "))
-    if kilometros_contador.isdigit():
-        kilometros_contador=int(kilometros_contador)
-    else: 
-            print("ingrese solo numeros enteros")
-            continue
+    print(
+    """ELEJA LA OPCION DESEADA
+    0-Exit
+    1-Viajar
+    2-Consultar
+    """
+    )
+    op=input("operacion: ")
     
+    if op =="1":
+        kilometros_contador=(input("ingrese los kilometros a recorrer: "))
+        if kilometros_contador.isdigit():
+            kilometros_contador=int(kilometros_contador)
+        else: 
+                print("ingrese solo numeros enteros")
+                continue
+            
+            
+        mante1.nuevo_viaje(kilometros_contador)
+
+        print(f""" El estado actual del auto {auto1.getMarca()} {auto1.getModelo()} es:
+        kilometros:         {mante1.getKilometros()}
+        aceite:             {mante1.getAceite()}/{diccio_intancia_0["c_aceite"]}
+        freno:              {mante1.getFreno()}/{diccio_intancia_0["c_freno"]}
+        correa:             {mante1.getCorrea()}/{diccio_intancia_0["c_correa"]}
+        cubiertas:          {mante1.getCubiertas()}/{diccio_intancia_0["c_cubiertas"]}
+
+        del titular {usuario1.getApellido()} {usuario1.getNombre()}""")
+
+        if mante1.getAceite()>=(diccio_intancia_0["c_aceite"]):
+            print(f"realice cambio de servicio correspondiete a : ACEITE")
+            reset_aceite=input("A REALIZADO CAMBIO ACEITE ?(s/n)")
+            if reset_aceite=="s" or reset_aceite=="S":
+                mante1.setAceite(0)
+
+        if mante1.getFreno()>=diccio_intancia_0["c_freno"]:
+            print(f"realice cambio de servicio correspondiete a : FRENO")
+            reset_freno=input("A RENOBADO LOS FRENOS ?(s/n)")
+            if reset_freno=="s" or reset_freno=="S":
+                mante1.setFreno(0)
+
+        if mante1.getCorrea()>=diccio_intancia_0["c_correa"]:
+            print(f"realice cambio de servicio correspondiete a : CORREA")
+            reset_corre=input("A REALIZADO CAMBIO CORREA ?(s/n)")
+            if reset_aceite=="s" or reset_aceite=="S":
+                mante1.setCorrea(0)
+
+        if mante1.getCubiertas()>=diccio_intancia_0["c_cubiertas"]:
+            print(f"realice cambio de servicio correspondiete a : CUBIERTAS")
+            reset_cubiertas=input("A REALIZADO CAMBIO CUBIERTAS ?(S/N)")
+            if reset_cubiertas=="s" or reset_cubiertas=="S":
+                mante1.setCubiertas(0)
+
+
+        if kilometros_contador==0:
+            break 
     
-    mante1.nuevo_viaje(kilometros_contador)
-    
-    print(f""" El estado actual del auto {auto1.getMarca()} {auto1.getModelo()} es:
-    kilometros:         {mante1.getKilometros()}
-    aceite:             {mante1.getAceite()}/{diccio_intancia_0["c_aceite"]}
-    freno:              {mante1.getFreno()}/{diccio_intancia_0["c_freno"]}
-    correa:             {mante1.getCorrea()}/{diccio_intancia_0["c_correa"]}
-    cubiertas:          {mante1.getCubiertas()}/{diccio_intancia_0["c_cubiertas"]}
-    
-    del titular {usuario1.getApellido()} {usuario1.getNombre()}""")
-    
-    if mante1.getAceite()>=(diccio_intancia_0["c_aceite"]):
-        print(f"realice cambio de servicio correspondiete a : ACEITE")
-        reset_aceite=input("A REALIZADO CAMBIO ACEITE ?(s/n)")
-        if reset_aceite=="s" or reset_aceite=="S":
-            mante1.setAceite(0)
-    
-    if mante1.getFreno()>=diccio_intancia_0["c_freno"]:
-        print(f"realice cambio de servicio correspondiete a : FRENO")
-        reset_freno=input("A RENOBADO LOS FRENOS ?(s/n)")
-        if reset_freno=="s" or reset_freno=="S":
-            mante1.setFreno(0)
-    
-    if mante1.getCorrea()>=diccio_intancia_0["c_correa"]:
-        print(f"realice cambio de servicio correspondiete a : CORREA")
-        reset_corre=input("A REALIZADO CAMBIO CORREA ?(s/n)")
-        if reset_aceite=="s" or reset_aceite=="S":
-            mante1.setCorrea(0)
-    
-    if mante1.getCubiertas()>=diccio_intancia_0["c_cubiertas"]:
-        print(f"realice cambio de servicio correspondiete a : CUBIERTAS")
-        reset_cubiertas=input("A REALIZADO CAMBIO CUBIERTAS ?(S/N)")
-        if reset_cubiertas=="s" or reset_cubiertas=="S":
-            mante1.setCubiertas(0)
-       
-    
-    if kilometros_contador==0:
+    if op=="2":
+        while True:
+            print(
+                """ BIENBENIDO AL MENU CONSULTAS DE:
+                1-KM DE LA CORREA DISTRIBUCION
+                2-KM DE LAS CUBIERTAS
+                3-KM DEL ACEITE
+                4-KM DEL FRENO
+                5-TODO
+                6-Exit
+                """
+            )    
+            opCons=input("elija la operacion: ")
+            if opCons=="1":
+                print(f""" El estado actual del auto {auto1.getMarca()} {auto1.getModelo()} es:
+                correa:{mante1.getCorrea()}/{diccio_intancia_0["c_correa"]}
+                """)
+            if opCons=="2":
+                print(f""" El estado actual del auto {auto1.getMarca()} {auto1.getModelo()} es:
+                cubiertas:{mante1.getCubiertas()}/{diccio_intancia_0["c_cubiertas"]}
+                """)
+            if opCons=="3":
+                print(f""" El estado actual del auto {auto1.getMarca()} {auto1.getModelo()} es:
+                aceite:{mante1.getAceite()}/{diccio_intancia_0["c_aceite"]}
+                """)
+            if opCons=="4":
+                print(f""" El estado actual del auto {auto1.getMarca()} {auto1.getModelo()} es:
+                freno:{mante1.getFreno()}/{diccio_intancia_0["c_freno"]}
+                """)
+            if opCons=="5":
+                print(f""" El estado actual del auto {auto1.getMarca()} {auto1.getModelo()} es:
+                kilometros:         {mante1.getKilometros()}
+                aceite:             {mante1.getAceite()}/{diccio_intancia_0["c_aceite"]}
+                freno:              {mante1.getFreno()}/{diccio_intancia_0["c_freno"]}
+                correa:             {mante1.getCorrea()}/{diccio_intancia_0["c_correa"]}
+                cubiertas:          {mante1.getCubiertas()}/{diccio_intancia_0["c_cubiertas"]}
+                """)
+            if opCons=="6":
+                break
+    if op=="0":
         break
-
-
-
